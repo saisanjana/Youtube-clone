@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { LIST_VIDEOS_API } from '../constants.js';
 import VideoBox from './VideoBox.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { setVideos } from '../Redux/appSlice.js';
 
 const VediosContainer = () => {
 
-  const [videoList, setVideoList] = useState(null);
+  // const [videoList, setVideoList] = useState(null);
+  const videoList =  useSelector((state) => state.app.videos),
+  dispatch = useDispatch();
 
   useEffect(()=>{
     fetchVideos();
@@ -14,8 +18,7 @@ const VediosContainer = () => {
 
     const list = await fetch(LIST_VIDEOS_API).then(async (response)=>{
       let data = await response.json();
-      console.log(data)
-      setVideoList(data.items);
+      dispatch(setVideos(data.items))
     })
 
   }

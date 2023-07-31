@@ -2,13 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const appSlice = createSlice({
     name: "app",
-    initialState:{openSideBar:true},
+    initialState:{openSideBar:true, videos : []},
     reducers:{
         toggleSideBar: (state) => {
             state.openSideBar = !state.openSideBar
+        },
+        hideSideBar: (state) => {
+            state.openSideBar = false
+        },
+        setVideos: (state, action) => {
+            state.videos = [...action.payload]
         }
     }
 });
 
-export const {toggleSideBar} = appSlice.actions;
- export default appSlice.reducer;
+export const {toggleSideBar, hideSideBar, setVideos} = appSlice.actions;
+export default appSlice.reducer;
