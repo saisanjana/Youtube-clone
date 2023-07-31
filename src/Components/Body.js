@@ -1,8 +1,8 @@
 import React from 'react'
 import SideBar from './SideBar'
 import BodyChips from './BodyChips'
-import VediosContainer from './VediosContainer'
 import { useSelector } from 'react-redux'
+import { Outlet } from 'react-router-dom'
 
 const Body = () => {
   const sideBarStatus = useSelector((state) => state.app.openSideBar);
@@ -10,9 +10,9 @@ const Body = () => {
   return (
     <div className='flex'>
         {sideBarStatus && <SideBar/>}
-            <div>
+            <div className='w-5/6'>
                 <BodyChips/>
-                <VediosContainer/>
+                <Outlet/>
             </div>
     </div>
   )

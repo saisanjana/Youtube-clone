@@ -1,10 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const SideBar = () => {
+
+  const navigate = useNavigate();
   return (
-    <div className='my-2 mx-4 p-2 bg-gray-50 shadow-lg'>
+    <div className='my-2 mx-4 p-2 bg-gray-50 shadow-lg overflow-y-scroll h-full'>
       <ul className='my-2 px-4'>
-        <li className='my-1'>Home</li>
+        <li className='my-1' onClick={()=>{navigate("/")}}>Home</li>
         <li className='my-1'>Shorts</li>
         <li className='my-1'>Subscriptions</li>
       </ul>

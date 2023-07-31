@@ -24,7 +24,7 @@ const VediosContainer = () => {
   }
 
   return (
-    <div className='flex flex-wrap'>
+    <div className='flex flex-wrap ml-3'>
     {
       videoList.map((vid)=>{
         return <VideoBox key={vid.id} data={vid}/>

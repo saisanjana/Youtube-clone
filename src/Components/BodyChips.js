@@ -14,13 +14,22 @@ const BodyChips = () => {
     "hyderbad",
     "random",
     "shit",
-    "everything"
+    "everything",
+    "new",
+    "hello",
+    "world",
+    "songs",
+    "sad songs",
+    "love songs",
+    "hero action",
+    "harry potter",
+    "hellow"
   ]
   return (
-    <div className='my-7 ml-9 flex'>
+    <div className='my-7 ml-9 flex overflow-hidden'>
     {
       chipsArray.map((chip)=>{
-        return <div className='m-2 bg-slate-300 py-1 px-2 rounded-md'>
+        return <div className='m-2 bg-slate-300 py-1 px-2 rounded-md whitespace-nowrap'>
           {chip}
         </div>
       })
