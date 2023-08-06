@@ -16,7 +16,7 @@ function Header() {
 
   useEffect(()=>{
     window.addEventListener('click', function(e){   
-      if (document.getElementById('sBox').contains(e.target)){
+      if (document.getElementById('sBox')?.contains(e.target)){
       setClickedInSBox(true);
       } else{
         if(!clickedInSBox){
